@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size:larger ;
+}
+
+#booktitle{
+    width: 100%;
+    text-align:center;
+    color: antiquewhite;
+    
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    /* remove underline */
+    text-decoration: none;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 65px;
+    height: 3px;
+    background: green;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: grey;
+}
+
+header {
+    /* background-color: #333; */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+
+.resources-head{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(4,9,30,0.7),
+    rgba(4,9,30,0.7)),url(image/earth.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.resources-text-box {
+    width: 100%;
+    color: whitesmoke;
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Georgia;
+    
+  }
+
+  .resources-text-box h1 {
+    
+    font-size: 6vw;
+    
+  }
+
+  .resources-text-box h2 {
+    font-weight: lighter;
+  }
+
+.line{
+    width: 400px;
+    height: 4px;
+    background: green;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.resource-category {
+    margin-bottom: 30px;
+    width: 100%;   
+}
+
+.resource-category h2 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 60px;
+    color: white;
+    text-decoration: underline;
+}
+
+.resource-category ul {
+    list-style: none;
+    padding: 0;
+    font-size: larger;
+}
+
+
+.resource-category ul li {
+    margin-bottom: 10px;
+}
+
+.resource-category ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.resource-category ul li a:hover {
+    text-decoration: underline;
+    color: #aa3838;
+}
+
+
+.booksection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* flip card */
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+    
+	align-items: center;
+	justify-content: center;
+	background-color: antiquewhite;
+    padding: 70px 17% ;
+    flex-wrap: wrap;
+    
+}
+.container .card {
+	height: 400px;
+	width: 400px;
+  
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 1s ease transform;
+
+    margin-right: 30px;
+    display: inline-block;
+	margin-bottom: 30px;
+}
+
+.container .card .front-card img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px 80px;
+}
+    
+
+.container .card .front-card,
+.container .card .back-card {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: yellowgreen;
+	backface-visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px;
+	text-align: center;
+	
+    transform-style: flat;
+    
+}
+.container .card .back-card {
+    
+	transform: rotateY(180deg);
+	background-color: green;
+}
+.container .card-wrapper:hover .card {
+   
+	transform: perspective(800px) rotateY(180deg);
+}
+.container .card .content {
+	transform: translateZ(100px);
+}
+h1 {
+	font-size: 50px;
+    color: white;
+}
+
+p {
+	font-size: 16px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+#booktitle{
+    
+    font-size: 50px;
+    font: bold;
+    color: white;
+
+    
+}
+#bookauthor {
+    font-weight: lighter;
+    font-style: italic;
+    color: white;
+
+}
+
+
+button {
+	padding: 20px 70px;
+	font-size: 15px;
+	color: white;
+	background-color: green;
+	border: none;
+    margin-bottom: 100px;
+    position: relative;
+    
+	text-transform: uppercase;
+    border-radius: 12px;
+}
+
+button:hover,
+#btnresources:hover {
+    background-color: darkgreen; 
+}
+
+
+#btnresources{
+    padding: 20px 80px;
+	font-size: 15px;
+	color: white;
+	background-color: green;
+	border: none;
+	margin-top: 50px;
+    margin-right: 10px;
+
+	text-transform: uppercase;
+    border-radius: 12px;
+
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+      width: 100%;
+      display: block;
+      flex-wrap: wrap;
+      
+    }
+  }
+
+
+
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Blog Section</title>
+
+    <link rel="stylesheet" type="text/css" href="contactus.css" />
+
+    <link rel="shortcut icon" href="images/fav-icon.svg" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+            <a href="Blog.html">Blogs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="resources.html">Resources Link</a>
+            <a href="aboutus.html">About us</a>
+            <a href="FaQ.html">FaQ</a>
+            <a href="ContactUs.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <div class="blog-heading">
+            <span>My Recent Posts</span>
+        </div>
+
+        <div class="contact-box">
+            <h1>Contact Us</h1>
+            <section class="container__left">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, feel
+                    free to reach out using any of the methods below.</p>
+
+                <h2>Contact Information</h2>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:beautifulearth@gmail.com">beautifulearth@gmail.com</a>
+                    </li>
+                    <li><strong>Phone:</strong> +60 (05)-282 6079</li>
+                    <li><strong>Address:</strong> Universiti Tunku Abdul Rahman, Jalan Universiti Bandar Barat 31900
+                        Kampar, Perak</li>
+                </ul>
+
+                <h2>Contact Form</h2>
+                <form>
+                    <div class="form__row">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form__row">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                    <div class="form__row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form__row">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form__row">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send message</button>
+                </form>
+                <script>
+                    $(function () {
+                        $("form").submit(function (event) {
+                            event.preventDefault();
+                            var name = $("#name").val();
+                            var name2 = $("#last-name").val();
+                            var email = $("#email").val();
+                            var phone = $("#phone").val();
+                            var message = $("#message").val();
+                            var expDate = new Date();
+                            expDate.setMinutes(expDate.getMinutes() + 5);
+
+                            document.cookie = "email=" + email + ";expires=" + expDate.toUTCString();
+
+                            if (typeof (Storage) !== "undefined") {
+                                localStorage.setItem("User", name);
+                                localStorage.setItem("Phone", phone);
+                                sessionStorage.setItem("Message", message);
+                                alert("Thank You ")
+                                window.location.href = "contactus_detail.html";
+                            }
+                        });
+                    });
+                </script>
+
+
+
+                <h2>Visit Us</h2>
+                <p><strong>Office Hours:</strong> Monday-Friday, 9:00 AM - 5:00 PM<br><strong>Closed:</strong> Weekends
+                    and Holidays</p>
+
+                <h2>Find Us on Social Media</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+                <p>Before reaching out, you might find answers to your questions in our FAQ section. <a
+                        href="faq.html">Explore FAQs</a></p>
+
+                <h2>Privacy Policy</h2>
+                <p>For information on how we handle your data, please read our <a href="#">Privacy Policy</a>.</p>
+
+                <h2>We'll Get Back to You</h2>
+                <p>After you submit the contact form, we'll do our best to respond to your inquiry within 1-2 business
+                    days. Thank you for reaching out!</p>
+            </section>
+
+
+        </div>
+
+    </section>
+</body>
+
+</html>

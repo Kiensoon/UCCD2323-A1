@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+</head>
+
+<body>
+    <h1></h1>
+
+    <script>
+        $(function () {
+            var email = getCookie("email");
+
+            if (typeof (Storage) !== "undefined") {
+
+                $("h1").text(localStorage.getItem("User")
+                    + " Phone:" + localStorage.getItem("Phone")
+                    + " Message: " + sessionStorage.getItem("Message"));
+
+            }
+
+
+        });
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+
+</html>

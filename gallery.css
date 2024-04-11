@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    /* remove underline */
+    text-decoration: none;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 65px;
+    height: 3px;
+    background: green;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+  
+.gallery-head{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(4,9,30,0.7),
+    rgba(4,9,30,0.7)),url(image/background.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+
+
+ .gallery-text-box {
+    width: 100%;
+    color: whitesmoke;
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Georgia;
+    
+  }
+
+  .gallery-text-box h1 {
+    
+    font-size: 6vw;
+    
+  }
+
+  .gallery-text-box h2 {
+    font-weight: lighter;
+  }
+
+.line{
+    width: 400px;
+    height: 4px;
+    background: green;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.gallery-content{
+    
+    text-align: center;
+    
+    font-family: Georgia,bold;
+    font-size: 50px;
+    font-style: italic;
+    color: white;
+}
+.gallery-content h2{
+
+   font-weight: lighter;
+    
+}
+section {
+    padding: 70px 17% 60px;
+  }
+  
+.places{
+    height: auto;
+    font-family: Georgia;
+    text-align: center;
+    
+    background: linear-gradient(rgba(160, 211, 183, 0.7),
+    rgba(172, 188, 252, 0.7)),url(image/earth.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.places h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4vw;
+    margin: 5%;
+}
+
+.places h5{
+ 
+    font-size: 1vw;
+    margin: 5%;
+}
+
+
+.placesimg img{
+    
+    width: 60%;
+    height: 80%;
+    object-fit: cover;
+    padding-top: 0px;
+    border-radius: 20px;
+    
+    margin-top: 5%;
+}
+
+.placesimg  h3{
+   text-align: center;
+   margin: 10px;
+   font-size: 4vw;
+}
+
+.placesimg p{
+    margin-bottom: 20px;
+    line-height: 30px;
+  
+}
+
+/*  for smaller screens */
+@media (max-width: 768px) {
+    .places h1 {
+        font-size: 1vm; 
+        text-align: center;
+        gap: 3rem;
+    }
+
+
+    .places h5 {
+        font-size: 0.7em; 
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .placesimg img{
+        
+        width: 80%; 
+        
+    }
+    .placesimg  h3{
+        text-align: center;
+        margin: 10px;
+        font-size: 5vw;
+         
+     }
+     .placesimg p{
+        margin-bottom: 20px;
+        
+        
+    }
+}

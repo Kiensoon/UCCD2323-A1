@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+ 
+body{
+    display: flex;
+    min-height: 200vh;
+    justify-content: center;
+    align-items: center;
+    background: url('earth.jpg') repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    
+}
+
+.logo{
+    font-size: 3em;
+    color: green;
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: green;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: black;
+    font: size 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-box h2{
+    text-align: center;
+}
+.contact-box h2{
+    font-size: 2.4rem;
+    color: #0694a4;
+    font-weight: 600;
+    text-align: center;
+}
+.contact-box p{
+    color: black;
+
+}
